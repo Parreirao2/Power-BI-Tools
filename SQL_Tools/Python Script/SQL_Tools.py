@@ -1,5 +1,8 @@
-import tkinter as tk
-from tkinter import ttk, scrolledtext, messagebox, filedialog
+import sys
+from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QInputDialog, QMessageBox, QRadioButton,
+                             QVBoxLayout, QTabWidget, QWidget, QLabel, QLineEdit, QPushButton, QTextEdit, QScrollArea)
+
 import csv
 from faker import Faker
 import random
@@ -79,17 +82,16 @@ def get_column_names(sample_type):
     return column_names[sample_type]
 
 def generate_csv():
-    num_rows = int(entry_rows.get())
-    sample_type = sample_choice.get()
-    if num_rows <= 0:
-        messagebox.showinfo("Invalid Input", "Please enter a valid number of rows.")
+    num_rows, ok = QInputDialog.getInt(window, "Enter Number of Rows", "Number of Rows:", 100, 1)
+    if not ok:
         return
+    sample_type = sample_choice.currentText()
     data = generate_random_data(num_rows, sample_type)
-    file_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
+    file_path, _ = QFileDialog.getSaveFileName(window, "Save CSV", "", "CSV files (*.csv)")
     if not file_path:
         return
     write_to_csv(file_path, data, sample_type)
-    messagebox.showinfo("CSV Generated", f"{num_rows} rows of random data generated and saved to {file_path}")
+    QMessageBox.information(window, "CSV Generated", f"{num_rows} rows of random data generated and saved to {file_path}")
 
 def find_words_in_query(words_list, sql_query):
     found_words = {}
@@ -136,12 +138,12 @@ def find_suggestions(sql_query):
     return suggestions
 
 def find_words():
-    words_to_find = [word.strip() for word in entry_words.get().split(",")]
+    words_to_find = [word.strip() for word in entry_words.text().split(",")]
     if not any(words_to_find):
-        messagebox.showinfo("No Words Entered", "Please enter words to find.")
+        QMessageBox.information(window, "No Words Entered", "Please enter words to find.")
         return
 
-    sql_query = text_query.get("1.0", "end-1c")
+    sql_query = text_query.toPlainText()
     found_words = find_words_in_query(words_to_find, sql_query)
 
     found_output = []
@@ -153,22 +155,18 @@ def find_words():
                 found_output.append(f"Word: {full_word} | Line {line_num}: {full_line}")
                 found_output.append("-" * 50)
 
-    text_found.config(state=tk.NORMAL)
-    text_found.delete("1.0", "end")
-    text_found.insert("1.0", "\n".join(found_output))
-    text_found.config(state=tk.DISABLED)
+    text_found.setPlainText("\n".join(found_output))
 
     suggestions = find_suggestions(sql_query)
-    text_suggestions.config(state=tk.NORMAL)
-    text_suggestions.delete("1.0", "end")
+    suggestions_text = ""
     for category, words in suggestions.items():
-        text_suggestions.insert("end", f"{category}:\n")
+        suggestions_text += f"{category}:\n"
         for word in words:
-            text_suggestions.insert("end", f"- {word}\n")
-    text_suggestions.config(state=tk.DISABLED)
+            suggestions_text += f"- {word}\n"
+    text_suggestions.setPlainText(suggestions_text)
 
 def upload_csv():
-    file_path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv")])
+    file_path, _ = QFileDialog.getOpenFileName(window, "Open CSV", "", "CSV files (*.csv)")
     if not file_path:
         return
 
@@ -194,76 +192,79 @@ def upload_csv():
         create_query += f"    {col} {data_type},\n"
     create_query = create_query.rstrip(",\n") + "\n);"
 
-    text_create_query.config(state=tk.NORMAL)
-    text_create_query.delete("1.0", "end")
-    text_create_query.insert("1.0", create_query)
-    text_create_query.config(state=tk.DISABLED)
+    text_create_query.setPlainText(create_query)
 
-root = tk.Tk()
-root.title("SQL Tools 0.0.2")
+app = QApplication(sys.argv)
+window = QMainWindow()
+window.setWindowTitle("SQL Tools 0.0.2")
 
-tab_control = ttk.Notebook(root)
-tab_find_words = ttk.Frame(tab_control)
-tab_create_table = ttk.Frame(tab_control)
-tab_generate_csv = ttk.Frame(tab_control)
-tab_control.add(tab_find_words, text='Find Words')
-tab_control.add(tab_create_table, text='Create Table')
-tab_control.add(tab_generate_csv, text='Generate CSV')
-tab_control.pack(expand=1, fill="both")
+tab_widget = QTabWidget()
+tab_find_words = QWidget()
+tab_create_table = QWidget()
+tab_generate_csv = QWidget()
+tab_widget.addTab(tab_find_words, "Find Words")
+tab_widget.addTab(tab_create_table, "Create Table")
+tab_widget.addTab(tab_generate_csv, "Generate CSV")
 
-label_words = tk.Label(tab_find_words, text="Enter words to find (comma-separated):")
-label_words.pack()
-entry_words = tk.Entry(tab_find_words)
-entry_words.pack()
+layout_find_words = QVBoxLayout(tab_find_words)
+layout_create_table = QVBoxLayout(tab_create_table)
+layout_generate_csv = QVBoxLayout(tab_generate_csv)
 
-label_query = tk.Label(tab_find_words, text="Enter SQL Query:")
-label_query.pack()
-text_query = scrolledtext.ScrolledText(tab_find_words, width=50, height=10)
-text_query.pack()
+label_words = QLabel("Enter words to find (comma-separated):")
+layout_find_words.addWidget(label_words)
+entry_words = QLineEdit()
+layout_find_words.addWidget(entry_words)
 
-button_find = tk.Button(tab_find_words, text="Find Words", command=find_words)
-button_find.pack()
+label_query = QLabel("Enter SQL Query:")
+layout_find_words.addWidget(label_query)
+text_query = QTextEdit()
+layout_find_words.addWidget(text_query)
 
-label_found = tk.Label(tab_find_words, text="Words found in the query:")
-label_found.pack()
-text_found = scrolledtext.ScrolledText(tab_find_words, width=50, height=7)
-text_found.pack()
+button_find = QPushButton("Find Words")
+button_find.clicked.connect(find_words)
+layout_find_words.addWidget(button_find)
 
-label_suggestions = tk.Label(tab_find_words, text="Search Suggestions:")
-label_suggestions.pack()
-text_suggestions = scrolledtext.ScrolledText(tab_find_words, width=50, height=7)
-text_suggestions.pack()
+label_found = QLabel("Words found in the query:")
+layout_find_words.addWidget(label_found)
+text_found = QTextEdit()
+text_found.setReadOnly(True)
+layout_find_words.addWidget(text_found)
 
-button_upload_csv = tk.Button(tab_create_table, text="Upload CSV", command=upload_csv)
-button_upload_csv.pack()
+label_suggestions = QLabel("Search Suggestions:")
+layout_find_words.addWidget(label_suggestions)
+text_suggestions = QTextEdit()
+text_suggestions.setReadOnly(True)
+layout_find_words.addWidget(text_suggestions)
 
-label_create_query = tk.Label(tab_create_table, text="Create Table Query:")
-label_create_query.pack()
-text_create_query = scrolledtext.ScrolledText(tab_create_table, width=50, height=28)
-text_create_query.pack()
+button_upload_csv = QPushButton("Upload CSV")
+button_upload_csv.clicked.connect(upload_csv)
+layout_create_table.addWidget(button_upload_csv)
 
-label_rows = tk.Label(tab_generate_csv, text="Enter number of rows:")
-label_rows.pack()
-entry_rows = tk.Entry(tab_generate_csv)
-entry_rows.pack()
+label_create_query = QLabel("Create Table Query:")
+layout_create_table.addWidget(label_create_query)
+text_create_query = QTextEdit()
+text_create_query.setReadOnly(True)
+layout_create_table.addWidget(text_create_query)
 
-label_sample = tk.Label(tab_generate_csv, text="Select sample type:")
-label_sample.pack()
-sample_choice = tk.StringVar()
-sample_choice.set('Personnel')  # Default value
-radio_sample_a = tk.Radiobutton(tab_generate_csv, text='Personnel', variable=sample_choice, value='Personnel')
-radio_sample_a.pack(anchor=tk.W)
-radio_sample_b = tk.Radiobutton(tab_generate_csv, text='Financial', variable=sample_choice, value='Financial')
-radio_sample_b.pack(anchor=tk.W)
-radio_sample_c = tk.Radiobutton(tab_generate_csv, text='Employee', variable=sample_choice, value='Employee')
-radio_sample_c.pack(anchor=tk.W)
-radio_sample_d = tk.Radiobutton(tab_generate_csv, text='Customer', variable=sample_choice, value='Customer')
-radio_sample_d.pack(anchor=tk.W)
+label_rows = QLabel("Enter number of rows:")
+layout_generate_csv.addWidget(label_rows)
+entry_rows = QLineEdit()
+layout_generate_csv.addWidget(entry_rows)
 
-button_generate_csv = tk.Button(tab_generate_csv, text="Generate CSV", command=generate_csv)
-button_generate_csv.pack()
+label_sample = QLabel("Select sample type:")
+layout_generate_csv.addWidget(label_sample)
+sample_choice = QtWidgets.QComboBox()
+sample_choice.addItems(['Personnel', 'Financial', 'Employee', 'Customer'])
+layout_generate_csv.addWidget(sample_choice)
 
-label_created_by = tk.Label(root, text="Created by Parreirao2", anchor="e")
-label_created_by.pack(side=tk.BOTTOM, fill=tk.X)
+button_generate_csv = QPushButton("Generate CSV")
+button_generate_csv.clicked.connect(generate_csv)
+layout_generate_csv.addWidget(button_generate_csv)
 
-root.mainloop()
+layout_main = QVBoxLayout()
+layout_main.addWidget(tab_widget)
+
+window.setCentralWidget(QWidget())
+window.centralWidget().setLayout(layout_main)
+window.show()
+sys.exit(app.exec_())
