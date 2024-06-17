@@ -9,7 +9,7 @@
 
 ---
 
-###  Current Projects:
+#  Current Projects:
 
 
 ## InfoHelper
@@ -21,7 +21,7 @@ Each column type has a specific analysis based on it's type, and each type has a
 
 The script is created in a user-friendly code structure that you can easily edit and adapt to your liking. The code for each measure is written in DAX so that you don't need to know C# to add your own analysis, you can just type your DAX Measure!
 
-# Features:
+### Features:
 String Columns Analysis:
 
 Calculates the count and percentage of blank rows.
@@ -46,7 +46,7 @@ Calculates median, standard deviation, variance, and percentiles.
 Calculates the count and percentage of blank and error rows.
 Outputs detailed column information and statistics.
 
-# How to use:
+### How to use:
 
 - Open Tabular Editor and load your model.
 - Click on C# Script
@@ -70,7 +70,7 @@ The script will iterate through each selected column by simply:
 
 This Python script provides a graphical user interface (GUI) to edit the ordinal values and names of pages within a Power BI report (.pbix) file.
 
-# How to Use:
+### How to Use:
 Open the Application: Run the script to open the Page Switcher GUI.
 Select PBIX File: Click the "Select PBIX File" button to choose the Power BI file you want to edit. 
 (at this point there will be a newly created .zip file in your folder, don't delete it or change anything inside it, as this is the .pbix file converted to a .zip and the script is reading it's JSON files)
@@ -78,7 +78,7 @@ Edit Page: Double-click on a page in the list to edit its ordinal value and name
 Save Changes: Click the "Save Changes" button to save your edits. A new PBIX file will be created with '_ChangedOrdinality.pbix' appended to the original file name.
 (the reason why a new .pbix file is created is simply to prevent possible losses. You can open this new .pbix and check the changes yourself, and if you're happy with them, just save over the original .pbix file.)
 
-# Important Notes:
+### Important Notes:
 Ensure the new PBIX file is not open when saving changes.
 Always keep backups of your original PBIX files before making any edits.
 Dependencies:
@@ -102,7 +102,7 @@ This script provides a user-friendly interface for SQL query analysis, CSV gener
 - Generate CSV files with random data of different sample types. You can choose to generate a .csv with as many rows as you'd like, and define which template to use from the following: Personel, Financial, Employee and Customer.
 - Upload a CSV file and generate a SQL CREATE TABLE statement based on its contents. The script will automaticaly determine the datatype of each column and provide an already "ready to run" query.
 
-# How to use:
+### How to use:
 
 Find Words:
 - Use the first box to enter each word you want to search for, separated by commas ",".
