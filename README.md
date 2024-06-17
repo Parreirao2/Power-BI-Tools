@@ -2,7 +2,7 @@
 
 ### Hi, my name is Diogo Parreirão!
 
-<img src="https://img.shields.io/static/v1?label=Overview&message=Parreirao2&color=f8efd4&style=for-the-badge&logo=GitHub&link=https://github.com/Parreirao2/" alt="Static GitHub">
+<img src="https://img.shields.io/static/v1?label=Overview&message=Parreirao2&color=f8efd4&style=for-the-badge&logo=GitHub&link=https://www.linkedin.com/in/diogo-parreirao-030006173/" alt="Static GitHub">
 
 <p>I like creating cool and useful python scripts<br/> I hope you can find something useful in here.</p>
 <a href="#" title="LinkedIn">
