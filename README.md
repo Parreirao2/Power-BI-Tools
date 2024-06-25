@@ -7,7 +7,8 @@
 <p>I like creating cool and useful python scripts<br/> I hope you can find something useful in here.</p>
 <a href="#" title="LinkedIn">
   <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/diogo-parreirao-030006173/" alt="LinkedIn"/></a>
-
+  
+[Alternative Link](https://www.linkedin.com/in/diogo-parreirao-030006173/)
 ---
 
 #  Current Projects:
@@ -92,7 +93,8 @@ os
 
 This tool streamlines the process of reordering and renaming pages in Power BI reports, enhancing report management and organization.
 
-
+### Download
+[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/PageSwitcher)
 
 
 ## Sample Generator + SQL Tools
@@ -121,3 +123,7 @@ Generate CSV:
 - Choose the Sample type from the dropdown list
 - Click Generate CSV
 - Choose the location where you want to save this .csv
+
+
+### Download
+[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/SQLTools)
