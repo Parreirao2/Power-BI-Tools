@@ -1,5 +1,5 @@
 ('C:\\Users\\diogo.parreirao\\Desktop\\Side Projects\\PBI Page ordinality '
- 'changer\\build\\PageSwitcher\\PYZ-00.pyz',
+ 'changer\\build\\PageSwitcher_5\\PYZ-00.pyz',
  [('PyQt5',
    'C:\\Users\\diogo.parreirao\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyQt5\\__init__.py',
    'PYMODULE'),

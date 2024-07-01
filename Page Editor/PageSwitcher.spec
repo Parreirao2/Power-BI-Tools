@@ -2,11 +2,11 @@
 
 
 a = Analysis(
-    ['PageSwitcher_3.py'],
+    ['PageSwitcher_5.py'],
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=[],
+    hiddenimports=['pkg_resources.py2_warn'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -21,7 +21,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='PageSwitcher',
+    name='PageSwitcher_5',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
