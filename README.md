@@ -65,7 +65,8 @@ The script will iterate through each selected column by simply:
 - Depending on the data type of each column, it will perform the respective analysis.
 - The results will be displayed in a output window that can be copy/pasted anywhere you want.
 
-
+### Get it here:
+[Lastest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/InfoHelper)
 
 
 ## Page Editor (for Power BI (.pbix) files)
