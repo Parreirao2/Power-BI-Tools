@@ -6,9 +6,9 @@
 
 <p>I like creating cool and useful python scripts<br/> I hope you can find something useful in here.</p>
 <a href="#" title="LinkedIn">
-  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/diogo-parreirao-030006173/" alt="LinkedIn"/></a>
-  
-[Alternative Link](https://www.linkedin.com/in/diogo-parreirao-030006173/)
+  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/diogo-parreirao-030006173/" alt="LinkedIn"/></a>  
+
+###### [Alternative Link](https://www.linkedin.com/in/diogo-parreirao-030006173/)
 ---
 
 #  Current Projects:
@@ -65,7 +65,8 @@ The script will iterate through each selected column by simply:
 - Depending on the data type of each column, it will perform the respective analysis.
 - The results will be displayed in a output window that can be copy/pasted anywhere you want.
 
-
+### Get it here:
+[Lastest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/InfoHelper)
 
 
 ## Page Editor (for Power BI (.pbix) files)
@@ -74,24 +75,15 @@ This Python script provides a graphical user interface (GUI) to edit the ordinal
 
 ### How to Use:
 Open the Application: Run the script to open the Page Switcher GUI.
-Select PBIX File: Click the "Select PBIX File" button to choose the Power BI file you want to edit. 
-(at this point there will be a newly created .zip file in your folder, don't delete it or change anything inside it, as this is the .pbix file converted to a .zip and the script is reading it's JSON files)
-Edit Page: Double-click on a page in the list to edit its ordinal value and name in the pop-up window.
-Save Changes: Click the "Save Changes" button to save your edits. A new PBIX file will be created with '_ChangedOrdinality.pbix' appended to the original file name.
-(the reason why a new .pbix file is created is simply to prevent possible losses. You can open this new .pbix and check the changes yourself, and if you're happy with them, just save over the original .pbix file.)
+Select PBIX File: Click the "Select PBIX File" button to choose the Power BI file you want to edit. (at this point there will be a newly created .zip file in your folder, don't delete it or change anything inside it, as this is the .pbix file converted to a .zip and the script is reading it's JSON files)
+Edit Page: Double-click on a page in the list to edit its ordinal value and name in the pop-up window. You can also change the Width and Height of the page, set it to hidden or unhidden and even choose the page type.
+Search Box: Just type the name of the Table, Measure or Column, and the app will only display the pages and visuals which have these fields.
+Delete Page: Click on the checkbox to select which page(s) you would like to Delete, then click on delete button on the bottom.
+Duplicate Page: Click on the checkbox to select which page(s) you would like to Duplicate, then click on duplicate button on the bottom. (the new pages will always have the higest ordinal value available, meaning, the will always go to the bottom of the list)
+Save Changes: Click the "Save Changes" button to save your edits. A new PBIX file will be created with '_ChangedOrdinality.pbix' appended to the original file name. (the reason why a new .pbix file is created is simply to prevent possible losses. You can open this new .pbix and check the changes yourself, and if you're happy with them, just save over the original .pbix file.)
 
 ### Important Notes:
-Ensure the new PBIX file is not open when saving changes.
-Always keep backups of your original PBIX files before making any edits.
-Dependencies:
-Python 3.x
-PyQt5
-JSON
-shutil
-zipfile
-os
-
-This tool streamlines the process of reordering and renaming pages in Power BI reports, enhancing report management and organization.
+Ensure the new PBIX file is not open when saving changes. Always keep backups of your original PBIX files before making any edits.
 
 ### Download
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/PageSwitcher)
