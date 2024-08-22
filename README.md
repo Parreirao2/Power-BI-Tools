@@ -7,7 +7,7 @@
 <p>I like creating cool and useful python scripts<br/> I hope you can find something useful in here.</p>
 <a href="#" title="LinkedIn">
   <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/diogo-parreirao-030006173/" alt="LinkedIn"/></a>  
-[<img src="[https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square]"](https://www.linkedin.com/in/diogo-parreirao-030006173/)
+[<img src="[https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square]"](https://www.linkedin.com/in/diogo-parreirao-030006173/)]
 
 ###### [Alternative Link](https://www.linkedin.com/in/diogo-parreirao-030006173/)
 ---
