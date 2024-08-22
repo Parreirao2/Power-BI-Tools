@@ -153,6 +153,10 @@ This is still a proof of concept, only used on a specific project of mine, but h
 ### How to use:
 - Select Folder with Excel/CSV files (the folder with the files you'd like to check)
 - Select the Template Excel File (the file which defines the expected structure)
+- There will be 2 tabs for each csv file.
+  	- One with the analysis
+  	- One with a graph displaying Number of Errors vs Column name
+- After the analysis finishes, you can export it as an excel file with a format ready to be read by a BI tool.
 
 - I've provided some samples that could be used to better understand how the tool works, [here](https://github.com/Parreirao2/Power-BI-Tools/tree/main/Excel%20Validator/TEST_SAMPLE)
 
