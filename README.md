@@ -119,3 +119,43 @@ Generate CSV:
 
 ### Download
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/SQLTools)
+
+
+## Excel Validator
+This script is intended to validate the integrity of multiple .csv files in bulk. Providing an analysis on mismatch types (via graphs), per file.
+The goal is for the user to define a structure of a sample excel file format by defining collumn names and their expected types (ex: String, int64, Float, etc...). The script will then check every .csv in a folder and compare their types and nomenclature and provide a short analysis on each type, identifying the number of errors, the row numbers, and the columns with the most errors.
+
+### Example output:
+
+Analyzing 1.csv:
+	Missing Columns: []
+	Extra Columns: []
+	Column Order Correct: True
+	Column Order Differences: []
+	Blank Values: 0
+	Rows with Blanks: []
+	Data Types:
+Name         object
+Address      object
+Phone        object
+DOB          object
+Salary        int64
+Category     object
+Job Title    object
+Company      object
+dtype: object
+	Rows with Incorrect Data Types: {'Phone': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99], 'Salary': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]}
+	Column with Most Errors: Phone (100 errors)
+	Suggested Corrections: {}
+
+This is still a proof of concept, only used on a specific project of mine, but hopefully it could be usefull to someone else.
+
+### How to use:
+- Select Folder with Excel/CSV files (the folder with the files you'd like to check)
+- Select the Template Excel File (the file which defines the expected structure)
+
+- I've provided some samples that could be used to better understand how the tool works, [here](https://github.com/Parreirao2/Power-BI-Tools/tree/main/Excel%20Validator/TEST_SAMPLE)
+
+
+### Download
+[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/Excel%20Validator)
