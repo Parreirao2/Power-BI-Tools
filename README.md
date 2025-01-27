@@ -25,12 +25,16 @@
   - [Page Actions](#page-actions)
   - [Full HD Page Format](#full-hd-page-format)
   - [Secure Saving](#secure-saving)
+  - [Download](#pageswitcher-download)
 - [InfoHelper](#infohelper)
   - [Features](#infohelper-features)
+  - [Download](#download-InfoHelper)
 - [Sample Generator](#sample-generator)
   - [How to Use](#sample-generator-how)
+  - [Download](#sample-generator-download)
 - [Excel Validator](#excel-validator)
   - [How to Use](#excel-validator-how)
+  - [Download](#excel-validator-download)
 
 
 ## PageSwitcher (for Power BI (.pbix) files)
@@ -209,7 +213,7 @@ The script will iterate through each selected column by simply:
 - Depending on the data type of each column, it will perform the respective analysis.
 - The results will be displayed in an output window that can be copy/pasted anywhere you want.
 
-### Get it here:
+### [Download it here](download-InfoHelper):
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/InfoHelper)
 
 
