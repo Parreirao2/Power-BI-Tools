@@ -12,6 +12,128 @@
 
 #  Current Projects:
 
+## PageSwitcher (for Power BI (.pbix) files)
+
+PageSwitcher is a powerful tool designed to simplify the process of managing and transforming Power BI reports connected to local models. With PageSwitcher, you can effortlessly modify your reports without needing to access Power BI directly. The application is user-friendly, efficient, and continuously evolving to meet your needs.
+
+### Features:
+PageSwitcher is a powerful tool designed to simplify the process of managing and transforming Power BI reports connected to local models. With PageSwitcher, you can effortlessly modify your reports without needing to access Power BI directly. The application is user-friendly, efficient, and continuously evolving to meet your needs.
+
+#### Report Page Overview
+
+Upon loading your report, all pages will be listed for easy navigation. By hovering over any page, a detailed summary is displayed, including:
+
+- **Ordinality**
+- **Name**
+- **Width and Height**
+- **Page Type**
+- **Measures and Columns used on the page**
+
+![Loading PBIX](./assets/LoadingPbix.gif)
+
+---
+
+#### Page Exploration
+
+Expand each page to gain insights into the visuals contained within. You can view:
+
+- Visual elements used on the page
+- Number of visuals ("Viz:")
+- Detailed information on measures and columns used within each visual
+
+![Opening Pages](./assets/OpeningPages.gif)
+
+---
+
+#### Page Editing
+
+Easily edit page properties by double-clicking on a page to open a pop-up window where you can modify:
+
+- **Ordinality**
+- **Name**
+- **Width and Height**
+- **Visibility (Hidden/Visible)**
+- **Page Type** (default Power BI page types)
+- **Filters applied to the page**
+
+![Edit Pages](./assets/EditPages.gif)
+
+---
+
+#### Visual Editing
+
+Double-clicking on a visual allows you to modify its properties via a dedicated pop-up window. Available properties include:
+
+- **Position (X and Y coordinates)**
+- **Size (Width and Height)**
+- **Visual Type and Name**
+- **Drill-Through (Enable/Disable)**
+- **Fields containing measures or columns**
+- **Visual position on the page**
+- **Edit visual theme and JSON code directly**
+
+![Edit Visuals](./assets/EditVisuals.gif)
+
+---
+
+#### Filter Management
+
+Manage filters with ease by expanding the "Filters" section of any page, or by double-clicking the page name and modifying filter fields directly. *(Note: Deleting a filter text may leave an "Undefined" property when the report is reopened in Power BI.)*
+
+![Edit Filters](./assets/EditFilters.gif)
+
+---
+
+#### Measure and Column Tracking
+
+Quickly locate where specific measures or columns are used across all pages and visuals by double-clicking on them.
+
+![Finding Columns and Measures](./assets/FindColumnsAndMeasures.gif)
+
+---
+
+#### Advanced Search
+
+Find anything in your report with the advanced search feature. Search for:
+
+- Page names
+- Filters
+- Columns and measures
+- Visual names, and more
+
+![Search For Anything](./assets/SearchForAnything.gif)
+
+---
+
+#### Page Actions
+
+PageSwitcher offers bulk actions to manage pages efficiently:
+
+- **Delete** or **Duplicate** multiple pages
+- Duplicated pages are added to the bottom to maintain the original ordinal order, which can be adjusted later as needed
+
+![Delete and Duplicate Pages](./assets/DeleteDuplicatePages.gif)
+
+---
+
+#### Full HD Page Format
+
+Easily convert all or selected pages to Full HD format with a single click. Since Power BI doesn't offer this by default, PageSwitcher provides a simple solution.
+
+![Full HD Option](./assets/FullHD.gif)
+
+---
+
+#### Secure Saving
+
+When saving your edited report, a new version is created, ensuring the original file remains untouched. This safeguard ensures data integrity and peace of mind while using the tool.
+
+![Saving](./assets/Saving.gif)
+
+
+### Download
+[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/PageSwitcher)
+
 
 ## InfoHelper
 
@@ -66,26 +188,6 @@ The script will iterate through each selected column by simply:
 
 ### Get it here:
 [Lastest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/InfoHelper)
-
-
-## Page Editor (for Power BI (.pbix) files)
-
-This Python script provides a graphical user interface (GUI) to edit the ordinal values and names of pages within a Power BI report (.pbix) file.
-
-### How to Use:
-Open the Application: Run the script to open the Page Switcher GUI.
-Select PBIX File: Click the "Select PBIX File" button to choose the Power BI file you want to edit. (at this point there will be a newly created .zip file in your folder, don't delete it or change anything inside it, as this is the .pbix file converted to a .zip and the script is reading it's JSON files)
-Edit Page: Double-click on a page in the list to edit its ordinal value and name in the pop-up window. You can also change the Width and Height of the page, set it to hidden or unhidden and even choose the page type.
-Search Box: Just type the name of the Table, Measure or Column, and the app will only display the pages and visuals which have these fields.
-Delete Page: Click on the checkbox to select which page(s) you would like to Delete, then click on delete button on the bottom.
-Duplicate Page: Click on the checkbox to select which page(s) you would like to Duplicate, then click on duplicate button on the bottom. (the new pages will always have the higest ordinal value available, meaning, the will always go to the bottom of the list)
-Save Changes: Click the "Save Changes" button to save your edits. A new PBIX file will be created with '_ChangedOrdinality.pbix' appended to the original file name. (the reason why a new .pbix file is created is simply to prevent possible losses. You can open this new .pbix and check the changes yourself, and if you're happy with them, just save over the original .pbix file.)
-
-### Important Notes:
-Ensure the new PBIX file is not open when saving changes. Always keep backups of your original PBIX files before making any edits.
-
-### Download
-[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/PageSwitcher)
 
 
 ## Sample Generator + SQL Tools
