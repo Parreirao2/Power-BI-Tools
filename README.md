@@ -12,6 +12,27 @@
 
 #  Current Projects:
 
+## Index
+
+- [PageSwitcher](#PageSwitcher)
+  - [Report Page Overview](#report-page-overview)
+  - [Page Exploration](#page-exploration)
+  - [Page Editing](#page-editing)
+  - [Visual Editing](#visual-editing)
+  - [Filter Management](#filter-management)
+  - [Measure and Column Tracking](#measure-and-column-tracking)
+  - [Advanced Search](#advanced-search)
+  - [Page Actions](#page-actions)
+  - [Full HD Page Format](#full-hd-page-format)
+  - [Secure Saving](#secure-saving)
+- [InfoHelper](#InfoHelper)
+  - [Features](InfoHelper-Features)
+- [Sample Generator](#SampleGenerator)
+  - [How to Use](#SampleGenerator-How)
+- [Excel Validator](#Excel-Validator)
+  - [How to Use](#Excel-Validator-How)
+
+
 ## PageSwitcher (for Power BI (.pbix) files)
 
 PageSwitcher is a powerful tool designed to simplify the process of managing and transforming Power BI reports connected to local models. With PageSwitcher, you can effortlessly modify your reports without needing to access Power BI directly. The application is user-friendly, efficient, and continuously evolving to meet your needs.
@@ -137,14 +158,15 @@ When saving your edited report, a new version is created, ensuring the original 
 
 ## InfoHelper
 
-InfoHelper is a C# Script that you can import to your Tabular Editor and use as a macro by right-clicking on any column and see it's specific profile analysis.
+[InfoHelper](#infohelper) is a C# Script that you can import to your Tabular Editor and use as a macro by right-clicking on any column and see it's specific profile analysis.
 
 Currently the script works on columns of the type: Strings, Int64, DateTime and Boolean.
 Each column type has a specific analysis based on it's type, and each type has a set of already created DAX Measures that you can easily copy/paste from the pop-up window and use to create as a new measure. These Measures already show their results, so that you can know what output to expect when creating them.
 
 The script is created in a user-friendly code structure that you can easily edit and adapt to your liking. The code for each measure is written in DAX so that you don't need to know C# to add your own analysis, you can just type your DAX Measure!
 
-### Features:
+### [InfoHelper Features](#infohelper-Features)
+
 String Columns Analysis:
 
 Calculates the count and percentage of blank rows.
@@ -190,7 +212,7 @@ The script will iterate through each selected column by simply:
 [Lastest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/InfoHelper)
 
 
-## Sample Generator + SQL Tools
+## [Sample Generator + SQL Tools](#SampleGenerator)
 
 This script provides a user-friendly interface for SQL query analysis, CSV generation, and SQL CREATE TABLE statement generation. It combines the power of PyQt5 for the GUI, Faker for data generation, and regular expressions for SQL parsing and suggestions.
 
@@ -198,7 +220,7 @@ This script provides a user-friendly interface for SQL query analysis, CSV gener
 - Generate CSV files with random data of different sample types. You can choose to generate a .csv with as many rows as you'd like, and define which template to use from the following: Personel, Financial, Employee and Customer.
 - Upload a CSV file and generate a SQL CREATE TABLE statement based on its contents. The script will automaticaly determine the datatype of each column and provide an already "ready to run" query.
 
-### How to use:
+### [How to use](#SampleGenerator-How):
 
 Find Words:
 - Use the first box to enter each word you want to search for, separated by commas ",".
@@ -222,7 +244,7 @@ Generate CSV:
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/SQLTools)
 
 
-## Excel Validator
+## [Excel Validator](#Excel-Validator)
 This script is intended to validate the integrity of multiple .csv files in bulk. Providing an analysis on mismatch types (via graphs), per file.
 The goal is for the user to define a structure of a sample excel file format by defining collumn names and their expected types (ex: String, int64, Float, etc...). The script will then check every .csv in a folder and compare their types and nomenclature and provide a short analysis on each type, identifying the number of errors, the row numbers, and the columns with the most errors.
 
@@ -251,7 +273,7 @@ dtype: object
 
 This is still a proof of concept, only used on a specific project of mine, but hopefully it could be usefull to someone else.
 
-### How to use:
+### [How to use](#Excel-Validator-How):
 - Select Folder with Excel/CSV files (the folder with the files you'd like to check)
 - Select the Template Excel File (the file which defines the expected structure)
 - There will be 2 tabs for each csv file.
