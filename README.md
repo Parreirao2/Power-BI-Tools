@@ -42,7 +42,6 @@
 PageSwitcher is a powerful tool designed to simplify the process of managing and transforming Power BI reports connected to local models. With PageSwitcher, you can effortlessly modify your reports without needing to access Power BI directly. The application is user-friendly, efficient, and continuously evolving to meet your needs.
 
 ### Features:
-PageSwitcher is a powerful tool designed to simplify the process of managing and transforming Power BI reports connected to local models. With PageSwitcher, you can effortlessly modify your reports without needing to access Power BI directly. The application is user-friendly, efficient, and continuously evolving to meet your needs.
 
 #### Report Page Overview
 
