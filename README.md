@@ -152,7 +152,8 @@ When saving your edited report, a new version is created, ensuring the original 
 ![Saving](./assets/Saving.gif)
 
 
-### Download
+### [Download PageSwitcher](#pageswitcher-download)
+
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/PageSwitcher)
 
 
@@ -240,7 +241,8 @@ Generate CSV:
 - Choose the location where you want to save this .csv
 
 
-### Download
+### [Download Sample Generator](#sample-generator-download)
+
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/SQLTools)
 
 
@@ -283,8 +285,8 @@ This is still a proof of concept, only used on a specific project of mine, but h
 
 - I've provided some samples that could be used to better understand how the tool works, [here](https://github.com/Parreirao2/Power-BI-Tools/tree/main/ExcelValidator/SampleFiles).
 
-
 ---
 
-### Download
+### [Download ExcelValidator](#excel-validator-download)
+
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/ExcelValidator)
