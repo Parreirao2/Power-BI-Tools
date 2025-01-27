@@ -10,11 +10,11 @@
 
 ---
 
-#  Current Projects:
+# Current Projects:
 
 ## Index
 
-- [PageSwitcher](#PageSwitcher)
+- [PageSwitcher](#pageswitcher)
   - [Report Page Overview](#report-page-overview)
   - [Page Exploration](#page-exploration)
   - [Page Editing](#page-editing)
@@ -25,12 +25,12 @@
   - [Page Actions](#page-actions)
   - [Full HD Page Format](#full-hd-page-format)
   - [Secure Saving](#secure-saving)
-- [InfoHelper](#InfoHelper)
-  - [Features](InfoHelper-Features)
-- [Sample Generator](#SampleGenerator)
-  - [How to Use](#SampleGenerator-How)
-- [Excel Validator](#Excel-Validator)
-  - [How to Use](#Excel-Validator-How)
+- [InfoHelper](#infohelper)
+  - [Features](#infohelper-features)
+- [Sample Generator](#sample-generator)
+  - [How to Use](#sample-generator-how)
+- [Excel Validator](#excel-validator)
+  - [How to Use](#excel-validator-how)
 
 
 ## PageSwitcher (for Power BI (.pbix) files)
@@ -158,14 +158,14 @@ When saving your edited report, a new version is created, ensuring the original 
 
 ## InfoHelper
 
-[InfoHelper](#infohelper) is a C# Script that you can import to your Tabular Editor and use as a macro by right-clicking on any column and see it's specific profile analysis.
+[InfoHelper](#infohelper) is a C# Script that you can import to your Tabular Editor and use as a macro by right-clicking on any column and see its specific profile analysis.
 
-Currently the script works on columns of the type: Strings, Int64, DateTime and Boolean.
-Each column type has a specific analysis based on it's type, and each type has a set of already created DAX Measures that you can easily copy/paste from the pop-up window and use to create as a new measure. These Measures already show their results, so that you can know what output to expect when creating them.
+Currently, the script works on columns of the type: Strings, Int64, DateTime, and Boolean.
+Each column type has a specific analysis based on its type, and each type has a set of already created DAX Measures that you can easily copy/paste from the pop-up window and use to create as a new measure. These Measures already show their results, so you can know what output to expect when creating them.
 
 The script is created in a user-friendly code structure that you can easily edit and adapt to your liking. The code for each measure is written in DAX so that you don't need to know C# to add your own analysis, you can just type your DAX Measure!
 
-### [InfoHelper Features](#infohelper-Features)
+### [InfoHelper Features](#infohelper-features)
 
 String Columns Analysis:
 
@@ -206,21 +206,21 @@ The script will iterate through each selected column by simply:
 - Select Macros and then choose the new script
 
 - Depending on the data type of each column, it will perform the respective analysis.
-- The results will be displayed in a output window that can be copy/pasted anywhere you want.
+- The results will be displayed in an output window that can be copy/pasted anywhere you want.
 
 ### Get it here:
-[Lastest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/InfoHelper)
+[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/InfoHelper)
 
 
-## [Sample Generator + SQL Tools](#SampleGenerator)
+## [Sample Generator + SQL Tools](#sample-generator)
 
 This script provides a user-friendly interface for SQL query analysis, CSV generation, and SQL CREATE TABLE statement generation. It combines the power of PyQt5 for the GUI, Faker for data generation, and regular expressions for SQL parsing and suggestions.
 
 - Find specific words in a SQL query and provide suggestions. This could be useful on very large SQL Queries, by providing each line number and each statement where the word was found.
-- Generate CSV files with random data of different sample types. You can choose to generate a .csv with as many rows as you'd like, and define which template to use from the following: Personel, Financial, Employee and Customer.
-- Upload a CSV file and generate a SQL CREATE TABLE statement based on its contents. The script will automaticaly determine the datatype of each column and provide an already "ready to run" query.
+- Generate CSV files with random data of different sample types. You can choose to generate a .csv with as many rows as you'd like, and define which template to use from the following: Personnel, Financial, Employee, and Customer.
+- Upload a CSV file and generate a SQL CREATE TABLE statement based on its contents. The script will automatically determine the datatype of each column and provide an already "ready to run" query.
 
-### [How to use](#SampleGenerator-How):
+### [How to use](#sample-generator-how):
 
 Find Words:
 - Use the first box to enter each word you want to search for, separated by commas ",".
@@ -244,20 +244,20 @@ Generate CSV:
 [Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/SQLTools)
 
 
-## [Excel Validator](#Excel-Validator)
+## [Excel Validator](#excel-validator)
 This script is intended to validate the integrity of multiple .csv files in bulk. Providing an analysis on mismatch types (via graphs), per file.
-The goal is for the user to define a structure of a sample excel file format by defining collumn names and their expected types (ex: String, int64, Float, etc...). The script will then check every .csv in a folder and compare their types and nomenclature and provide a short analysis on each type, identifying the number of errors, the row numbers, and the columns with the most errors.
+The goal is for the user to define a structure of a sample excel file format by defining column names and their expected types (ex: String, int64, Float, etc...). The script will then check every .csv in a folder and compare their types and nomenclature and provide a short analysis on each type, identifying the number of errors, the row numbers, and the columns with the most errors.
 
 ### Example output:
 
 Analyzing 1.csv:
-	Missing Columns: []
-	Extra Columns: []
-	Column Order Correct: True
-	Column Order Differences: []
-	Blank Values: 0
-	Rows with Blanks: []
-	Data Types:
+  Missing Columns: []
+  Extra Columns: []
+  Column Order Correct: True
+  Column Order Differences: []
+  Blank Values: 0
+  Rows with Blanks: []
+  Data Types:
 Name         object
 Address      object
 Phone        object
@@ -267,13 +267,13 @@ Category     object
 Job Title    object
 Company      object
 dtype: object
-	Rows with Incorrect Data Types: {'Phone': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99], 'Salary': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]}
-	Column with Most Errors: Phone (100 errors)
-	Suggested Corrections: {}
+  Rows with Incorrect Data Types: {'Phone': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99], 'Salary': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]}
+  Column with Most Errors: Phone (100 errors)
+  Suggested Corrections: {}
 
-This is still a proof of concept, only used on a specific project of mine, but hopefully it could be usefull to someone else.
+This is still a proof of concept, only used on a specific project of mine, but hopefully it could be useful to someone else.
 
-### [How to use](#Excel-Validator-How):
+### [How to use](#excel-validator-how):
 - Select Folder with Excel/CSV files (the folder with the files you'd like to check)
 - Select the Template Excel File (the file which defines the expected structure)
 - There will be 2 tabs for each csv file.
@@ -281,8 +281,10 @@ This is still a proof of concept, only used on a specific project of mine, but h
   	- One with a graph displaying Number of Errors vs Column name
 - After the analysis finishes, you can export it as an excel file with a format ready to be read by a BI tool.
 
-- I've provided some samples that could be used to better understand how the tool works, [here](https://github.com/Parreirao2/Power-BI-Tools/tree/main/Excel%20Validator/TEST_SAMPLE)
+- I've provided some samples that could be used to better understand how the tool works, [here](https://github.com/Parreirao2/Power-BI-Tools/tree/main/ExcelValidator/SampleFiles).
 
+
+---
 
 ### Download
-[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/tree/main/Excel%20Validator)
+[Latest Version](https://github.com/Parreirao2/Power-BI-Tools/releases/tag/ExcelValidator)
